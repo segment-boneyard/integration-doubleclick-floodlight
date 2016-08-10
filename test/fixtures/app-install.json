@@ -25,11 +25,28 @@
     }
   },
   "output": {
-    "event": "MOBILE_APP_INSTALL",
-    "advertiser_id": "159358",
-    "advertiser_tracking_enabled": 1,
-    "application_tracking_enabled": 1,
-    "bundle_id": "com.segment.TestApp",
-    "bundle_short_version": 2
+    "type": "track",
+    "event": "Application Installed",
+    "userId": "user-id",
+    "properties": {},
+    "context": {
+      "ip": "10.0.0.2",
+      "app": { "namespace": "com.segment.TestApp", "version": 2 },
+      "device": {
+        "manufacturer": "some-brand",
+        "type": "ios",
+        "advertisingId": "159358",
+        "adTrackingEnabled": true
+      },
+      "network": { "carrier": "some-carrier" },
+      "locale": "en-US",
+      "library": {
+        "name": "analytics-ios"
+      },
+      "referrer": {
+        "type": "iad",
+        "id": "some-id"
+      }
+    }
   }
 }
