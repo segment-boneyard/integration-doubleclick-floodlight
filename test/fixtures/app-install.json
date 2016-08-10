@@ -3,7 +3,9 @@
     "type": "track",
     "event": "Application Installed",
     "userId": "user-id",
-    "properties": {},
+    "properties": {
+      "version": 2
+    },
     "context": {
       "ip": "10.0.0.2",
       "app": { "namespace": "com.segment.TestApp", "version": 2 },

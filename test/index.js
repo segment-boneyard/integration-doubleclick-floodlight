@@ -12,8 +12,19 @@ describe('DoubleClick Floodlight', function(){
 
   beforeEach(function(){
     settings = {
-      appId: '654757884637545',
-      appEvents: { 'Levelled Up': 'fb_mobile_level_achieved' }
+      source: '654757884637545',
+      events: [{
+        key: 'Application Installed',
+        value: {
+          cat: 'activityTag',
+          type: 'groupTag',
+          customVariable: [{
+            key: 'version',
+            value: 'u1'
+          }]
+
+        }
+      }]
     };
   });
 
@@ -36,7 +47,7 @@ describe('DoubleClick Floodlight', function(){
     beforeEach(function(){
       msg = {
         type: 'track',
-        event: 'Character Upgraded',
+        event: 'Free El',
         timestamp: new Date(),
         context: {
           app: {
@@ -77,7 +88,7 @@ describe('DoubleClick Floodlight', function(){
 
   describe('track', function(){
 
-    it.skip('should track application installed correctly', function(done){
+    it.only('should track application installed correctly', function(done){
       var json = test.fixture('app-install');
       test
         .track(json.input)
