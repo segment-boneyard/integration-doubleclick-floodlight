@@ -1,4 +1,4 @@
-[![CircleCI](https://circleci.com/gh/segment-integrations/integration-doubleclick-floodlight.svg?style=svg)](https://circleci.com/gh/segment-integrations/integration-doubleclick-floodlight)
+[![CircleCI](https://circleci.com/gh/segment-integrations/integration-doubleclick-floodlight/tree/master.svg?style=svg)](https://circleci.com/gh/segment-integrations/integration-doubleclick-floodlight/tree/master)
 # integration-doubleclick floodlight
 
 Server-Side DoubleClick Floodlight integration for Segment.
