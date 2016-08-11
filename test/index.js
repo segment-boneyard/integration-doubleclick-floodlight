@@ -103,6 +103,7 @@ describe('DoubleClick Floodlight', function(){
       test
         .track(json.input)
         .expects(200)
+        .set('User-Agent', output.userAgent)
         .end(function(err, res){
           if (err) throw err;
           // we don't use query params so making sure the endpoint
