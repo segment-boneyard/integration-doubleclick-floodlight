@@ -2,6 +2,7 @@ var Test = require('segmentio-integration-tester');
 var assert = require('assert');
 var facade = require('segmentio-facade');
 var should = require('should');
+var sinon = require('sinon');
 var Floodlight = require('..');
 var mapper = require('../lib/mapper');
 
@@ -85,12 +86,30 @@ describe('DoubleClick Floodlight', function(){
   describe('track', function(){
     it('should track application installed correctly', function(done){
       var json = test.fixture('app-install');
-      // TODO: more robust way to test this? 
+      var output = json.output;
+      // stubbing the random cachebuster for testing
+      // this gets multiplied by 10000000000000000000 so will hardcode ord
+      sinon.stub(Math, 'random').returns(0.27005030284556764);
+
+      var expectedPath = '/ddm/activity/'
+        + 'dc_rdid=' + output.dc_rdid
+        + ';src=' + output.src
+        + ';cat=' + output.cat
+        + ';type=' + output.type
+        + ';ord=' + '2700503028455676400' 
+        + ';tag_for_child_directed_treatment=' + output.tag_for_child_directed_treatment
+        + ';dc_lat=' + output.dc_lat;
 
       test
         .track(json.input)
         .expects(200)
-        .end(done);
+        .end(function(err, res){
+          if (err) throw err;
+          // we don't use query params so making sure the endpoint
+          // which includes the payload is correct
+          assert(res[0].req.path === expectedPath);
+          done();
+        });
     });
   });
 });
