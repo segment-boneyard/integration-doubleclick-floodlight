@@ -1,6 +1,6 @@
 {
   "name": "integration-doubleclick-floodlight",
-  "version": "0.0.0",
+  "version": "1.0.0",
   "private": false,
   "description": "DoubleClick Floodlight server-side integration",
   "author": "Segment <friends@segment.com>",
