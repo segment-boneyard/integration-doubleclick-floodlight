@@ -43,6 +43,7 @@ describe('DoubleClick Floodlight', function(){
 
   describe('.validate()', function(){
     var msg;
+    var settings;
 
     beforeEach(function(){
       msg = {
@@ -68,11 +69,6 @@ describe('DoubleClick Floodlight', function(){
       test.invalid(msg, settings);
     });
 
-    it('should be invalid when advertisingEnabled is false', function(){
-      delete msg.context.device.adTrackingEnabled;
-      test.invalid(msg, settings);
-    });
-
     it('should be valid when settings are complete', function(){
       test.valid(msg, settings);
     });
@@ -80,19 +76,19 @@ describe('DoubleClick Floodlight', function(){
 
    describe('mapper', function(){
     describe('track', function(){
-      it.skip('should map application installed', function(){
-        test.maps('app-install');
+      it('should map application installed', function(){
+        test.maps('app-install', settings, { ignored: 'ord' });
       });
     });
   });
 
   describe('track', function(){
-
-    it.only('should track application installed correctly', function(done){
+    //TODO: How do you test this?
+    it.skip('should track application installed correctly', function(done){
       var json = test.fixture('app-install');
+
       test
         .track(json.input)
-        .sends(json.output)
         .expects(200)
         .end(done);
     });

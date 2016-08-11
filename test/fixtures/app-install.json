@@ -27,28 +27,11 @@
     }
   },
   "output": {
-    "type": "track",
-    "event": "Application Installed",
-    "userId": "user-id",
-    "properties": {},
-    "context": {
-      "ip": "10.0.0.2",
-      "app": { "namespace": "com.segment.TestApp", "version": 2 },
-      "device": {
-        "manufacturer": "some-brand",
-        "type": "ios",
-        "advertisingId": "159358",
-        "adTrackingEnabled": true
-      },
-      "network": { "carrier": "some-carrier" },
-      "locale": "en-US",
-      "library": {
-        "name": "analytics-ios"
-      },
-      "referrer": {
-        "type": "iad",
-        "id": "some-id"
-      }
-    }
+    "dc_rdid": 159358,
+    "src": "654757884637545",
+    "cat": "activityTag",
+    "type": "groupTag",
+    "tag_for_child_directed_treatment": 0,
+    "dc_lat": 1
   }
 }
