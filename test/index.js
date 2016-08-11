@@ -112,5 +112,35 @@ describe('DoubleClick Floodlight', function(){
           done();
         });
     });
+
+    it('should set copa compliance', function(done) {
+      var json = test.fixture('app-install');
+
+      // set integration option
+      json.input.integrations = {
+        'DoubleClick Floodlight': {
+          copaCompliant: true 
+        }
+      };
+      var output = json.output;
+      var expectedPath = '/ddm/activity/'
+        + 'dc_rdid=' + output.dc_rdid
+        + ';src=' + output.src
+        + ';cat=' + output.cat
+        + ';type=' + output.type
+        + ';ord=' + '2700503028455676400' 
+        + ';tag_for_child_directed_treatment=1' 
+        + ';dc_lat=' + output.dc_lat;
+
+      test
+        .track(json.input)
+        .expects(200)
+        .set('User-Agent', output.userAgent)
+        .end(function(err, res){
+          if (err) throw err;
+          assert(res[0].req.path === expectedPath);
+          done();
+        });
+    });
   });
 });
