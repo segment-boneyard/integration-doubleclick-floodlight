@@ -22,7 +22,6 @@ describe('DoubleClick Floodlight', function(){
             key: 'version',
             value: 'u1'
           }]
-
         }
       }]
     };
@@ -77,15 +76,16 @@ describe('DoubleClick Floodlight', function(){
    describe('mapper', function(){
     describe('track', function(){
       it('should map application installed', function(){
+        // ignoring `ord` since it is randomly generated
         test.maps('app-install', settings, { ignored: 'ord' });
       });
     });
   });
 
   describe('track', function(){
-    //TODO: How do you test this?
-    it.skip('should track application installed correctly', function(done){
+    it('should track application installed correctly', function(done){
       var json = test.fixture('app-install');
+      // TODO: more robust way to test this? 
 
       test
         .track(json.input)
