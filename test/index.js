@@ -80,6 +80,10 @@ describe('DoubleClick Floodlight', function(){
         // ignoring `ord` since it is randomly generated
         test.maps('app-install', settings, { ignored: 'ord' });
       });
+
+      it('should not send unmapped events', function(){
+        test.maps('unmapped', settings);
+      });
     });
   });
 

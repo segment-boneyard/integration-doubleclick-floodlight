@@ -1,0 +1,30 @@
+{
+  "input": {
+    "type": "track",
+    "event": "Pokemon Battle Won",
+    "userId": "user-id",
+    "properties": {
+      "version": 2
+    },
+    "context": {
+      "ip": "10.0.0.2",
+      "app": { "namespace": "com.segment.TestApp", "version": 2 },
+      "device": {
+        "manufacturer": "some-brand",
+        "type": "ios",
+        "advertisingId": "159358",
+        "adTrackingEnabled": true
+      },
+      "network": { "carrier": "some-carrier" },
+      "locale": "en-US",
+      "library": {
+        "name": "analytics-ios"
+      },
+      "referrer": {
+        "type": "iad",
+        "id": "some-id"
+      }
+    }
+  },
+  "output": {}
+}
