@@ -95,12 +95,12 @@ describe('DoubleClick Floodlight', function(){
       // this gets multiplied by 10000000000000000000 so will hardcode ord
       sinon.stub(Math, 'random').returns(0.27005030284556764);
 
-      var expectedPath = '/ddm/activity/'
+      var expectedUrl = 'https://ad.doubleclick.net/ddm/activity/'
         + 'dc_rdid=' + output.dc_rdid
         + ';src=' + output.src
         + ';cat=' + output.cat
         + ';type=' + output.type
-        + ';ord=' + '2700503028455676400' 
+        + ';ord=' + '2700503028455676400'
         + ';tag_for_child_directed_treatment=' + output.tag_for_child_directed_treatment
         + ';dc_lat=' + output.dc_lat;
 
@@ -112,7 +112,7 @@ describe('DoubleClick Floodlight', function(){
           if (err) throw err;
           // we don't use query params so making sure the endpoint
           // which includes the payload is correct
-          assert(res[0].req.path === expectedPath);
+          assert.strictEqual(res[0].request.url, expectedUrl);
           done();
         });
     });
@@ -123,17 +123,17 @@ describe('DoubleClick Floodlight', function(){
       // set integration option
       json.input.integrations = {
         'DoubleClick Floodlight': {
-          copaCompliant: true 
+          copaCompliant: true
         }
       };
       var output = json.output;
-      var expectedPath = '/ddm/activity/'
+      var expectedUrl = 'https://ad.doubleclick.net/ddm/activity/'
         + 'dc_rdid=' + output.dc_rdid
         + ';src=' + output.src
         + ';cat=' + output.cat
         + ';type=' + output.type
-        + ';ord=' + '2700503028455676400' 
-        + ';tag_for_child_directed_treatment=1' 
+        + ';ord=' + '2700503028455676400'
+        + ';tag_for_child_directed_treatment=1'
         + ';dc_lat=' + output.dc_lat;
 
       test
@@ -142,7 +142,7 @@ describe('DoubleClick Floodlight', function(){
         .set('User-Agent', output.userAgent)
         .end(function(err, res){
           if (err) throw err;
-          assert(res[0].req.path === expectedPath);
+          assert.strictEqual(res[0].request.url, expectedUrl);
           done();
         });
     });
