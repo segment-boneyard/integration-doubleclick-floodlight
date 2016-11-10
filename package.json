@@ -1,6 +1,6 @@
 {
   "name": "integration-doubleclick-floodlight",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "integration-version": "2016-08-11",
   "private": false,
   "description": "DoubleClick Floodlight server-side integration",
@@ -10,8 +10,10 @@
     "test": "make test"
   },
   "dependencies": {
+    "@ndhoule/each": "^2.0.1",
+    "@ndhoule/foldl": "^2.0.1",
+    "batch": "^0.5.3",
     "extend": "^3.0.0",
-    "is": "^3.1.0",
     "segmentio-facade": "2.x",
     "segmentio-integration": "^5.0.1",
     "should": "^11.0.0"
