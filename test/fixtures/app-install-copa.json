@@ -33,7 +33,7 @@
     }
   },
   "output": {
-    "endpoints": ["dc_rdid=7A3CBEA0-BDF5-11E4-8DFC-AA07A5B093DB;src=654757884637545;cat=activityTag;type=groupTag;ord=2700503028455676400;tag_for_child_directed_treatment=0;dc_lat=1"],
+    "endpoints": ["dc_rdid=7A3CBEA0-BDF5-11E4-8DFC-AA07A5B093DB;src=654757884637545;cat=activityTag;type=groupTag;ord=2700503028455676400;tag_for_child_directed_treatment=1;dc_lat=1"],
     "userAgent": "Segment/1.0 (iPhone OS; CPU iPhone7,2; en-US) Apple; Version 8.1.3"
   }
 }
