@@ -15,7 +15,7 @@
     "batch": "^0.5.3",
     "extend": "^3.0.0",
     "segmentio-facade": "2.x",
-    "segmentio-integration": "^5.0.1",
+    "segmentio-integration": "^5.1.0",
     "should": "^11.0.0"
   },
   "devDependencies": {
